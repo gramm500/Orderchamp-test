@@ -10,8 +10,6 @@ class LoginRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array
      */
     public function rules(): array
     {
@@ -25,7 +23,7 @@ class LoginRequest extends FormRequest
             'password' => [
                 'required',
                 'string',
-                'min:2'
+                'min:2',
             ],
         ];
     }

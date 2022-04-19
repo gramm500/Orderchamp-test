@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class AddProductToCartRequest extends FormRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -15,7 +14,6 @@ class AddProductToCartRequest extends FormRequest
     public function rules()
     {
         return [
-            //
         ];
     }
 }

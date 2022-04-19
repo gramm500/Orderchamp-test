@@ -9,16 +9,14 @@ use Illuminate\Http\Resources\Json\JsonResource;
 class CartResource extends JsonResource
 {
     /**
-     * Class CartResource
-     *
-     * @package App\Http\Resources
+     * Class CartResource.
      *
      * @mixin CartResource
      */
     public function toArray($request): array
     {
         return [
-            'user' => $this->user->name,
+            'user'    => $this->user->name,
             'product' => $this->product->name,
         ];
     }

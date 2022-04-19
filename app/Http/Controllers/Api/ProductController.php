@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace App\Http\Controllers\Api;
 
-use App\Events\OrderCreated;
-use App\Http\Controllers\Controller;
-use App\Http\Resources\CartResource;
-use App\Http\Resources\ProductResource;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Product;
+use App\Events\OrderCreated;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Resources\CartResource;
+use App\Http\Resources\ProductResource;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ProductController extends Controller
@@ -41,11 +41,10 @@ class ProductController extends Controller
 
         $order = Order::create([
             'user_id' => $user->id,
-            'price' => $price,
+            'price'   => $price,
         ]);
         $user->carts()->delete();
 
         OrderCreated::dispatch($order);
-
     }
 }
