@@ -105,4 +105,8 @@ return [
             resource_path('views/vendor/mail'),
         ],
     ],
+
+    'delay' => [
+        'default' => env('DISCOUNT_DELAY', 900),
+    ],
 ];

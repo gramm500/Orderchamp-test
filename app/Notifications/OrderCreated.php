@@ -20,7 +20,7 @@ class OrderCreated extends Notification implements ShouldQueue
      */
     public function __construct()
     {
-        //
+        $this->delay(config('mail.delay.default'));
     }
 
     /**

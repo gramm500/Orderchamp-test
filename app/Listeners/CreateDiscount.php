@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Log;
 
 class CreateDiscount
 {
-    /**
-     * Create the event listener.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-
-    }
 
     /**
      * Handle the event.
@@ -29,13 +20,13 @@ class CreateDiscount
      * @param OrderCreated $event
      * @return void
      */
-    public function handle(OrderCreated $event)
+    public function handle(OrderCreated $event): void
     {
         /** @var User $user */
         $user = $event->order->user;
         $discount = $user->discount;
         if ($discount === null) {
-            $discount = Discount::create([
+            Discount::create([
                 'user_id' => $user->id,
                 'amount' => 5,
             ]);
